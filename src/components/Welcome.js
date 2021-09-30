@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 const Welcome = () => {
   const [WelcomeImagesData, setWelcomeImagesData] = useState([]);
-
   const loadWelcomeImagesData = async () => {
     const resp = await fetch(
       "https://37yhk6o9fi.execute-api.eu-west-2.amazonaws.com/Production/galleryimages"
@@ -11,7 +10,6 @@ const Welcome = () => {
     let jsonData = await resp.json();
     setWelcomeImagesData(jsonData);
   };
-
   useEffect(() => {
     loadWelcomeImagesData();
   }, []);
